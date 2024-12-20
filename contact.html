@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+    <main>
+        <section class="team-selector">
+            <h2>Reach Out to Our Team</h2>
+            <p>Select a team member to view their details:</p>
+            <select id="teamSelector" onchange="showTeamMember()">
+                <option value="">Choose a Member</option>
+                <option value="meghana">Meghana</option>
+                <option value="princia">Princia</option>
+                <option value="prerana">Prerana</option>
+                <option value="ranjitha">Ranjitha</option>
+            </select>
+        </section>
+
+        <section class="contact-grid">
+            <div id="meghana" class="contact-card hidden">
+                <h3>Meghana</h3>
+                <p><i class="fas fa-envelope"></i> megha@example.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Udupi, Karnataka</p>
+                <a href="mailto:megha@example.com" class="cta-btn">Send Email</a>
+                <a href="https://www.linkedin.com/in/project-resume-456" target="_blank" class="cta-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+            <div id="princia" class="contact-card hidden">
+                <h3>Princia</h3>
+                <p><i class="fas fa-envelope"></i> princia@example.com</p>
+                <a href="mailto:princia@example.com" class="cta-btn">Send Email</a>
+                <a href="https://www.linkedin.com/in/project-resume-456" target="_blank" class="cta-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+            <div id="prerana" class="contact-card hidden">
+                <h3>Prerana</h3>
+                <p><i class="fas fa-envelope"></i> prerana@example.com</p>
+                <a href="mailto:prerana@example.com" class="cta-btn">Send Email</a>
+                <a href="https://www.linkedin.com/in/project-resume-456" target="_blank" class="cta-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+            <div id="ranjitha" class="contact-card hidden">
+                <h3>Ranjitha</h3>
+                <p><i class="fas fa-envelope"></i> ranjitha@example.com</p>
+                <a href="mailto:ranjitha@example.com" class="cta-btn">Send Email</a>
+                <a href="https://www.linkedin.com/in/web-developer-fake" target="_blank" class="cta-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </section>
+
+        <section class="team-links">
+            <h3>Team Links</h3>
+            <ul>
+                <li><a href="https://github.com/resume-project" target="_blank"><i class="fab fa-github"></i> Team GitHub</a></li>
+                <li><a href="https://github.com/example-dev123" target="_blank"><i class="fab fa-github"></i> Other Projects</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Team. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showTeamMember() {
+            const teamSelector = document.getElementById('teamSelector');
+            const selectedMember = teamSelector.value;
+            const members = document.querySelectorAll('.contact-card');
+
+            members.forEach(member => {
+                member.classList.add('hidden');
+            });
+
+            if (selectedMember) {
+                document.getElementById(selectedMember).classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
